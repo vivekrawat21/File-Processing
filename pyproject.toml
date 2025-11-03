@@ -1,0 +1,14 @@
+[project]
+name = "file-processing"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "alembic>=1.17.1",
+    "asyncpg>=0.30.0",
+    "fastapi>=0.121.0",
+    "psycopg2-binary>=2.9.11",
+    "sqlalchemy[asyncio]>=2.0.44",
+    "uvicorn>=0.38.0",
+]
