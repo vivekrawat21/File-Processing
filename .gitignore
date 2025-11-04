@@ -1,0 +1,63 @@
+# --- Virtual Environment ---
+# The virtual environment created by uv
+.venv/
+venv/
+env/
+
+# --- Python ---
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# --- IDEs and Editors ---
+# Visual Studio Code
+.vscode/
+# PyCharm
+.idea/
+# Sublime Text
+*.sublime-project
+*.sublime-workspace
+
+# --- Environment ---
+# Environment variables file - contains secrets!
+.env
+.env.*
+!/.env.example
+
+# --- Database ---
+# Local database files (e.g., for SQLite testing)
+*.db
+*.sqlite3
+
+# --- Uploads ---
+# Directory for user-uploaded files
+uploads/
+
+# --- Test Artifacts ---
+# Coverage reports
+.coverage
+.coverage.*
+htmlcov/
+# Pytest cache
+.pytest_cache/
+
+# --- Build and Distribution ---
+# Build artifacts
+build/
+dist/
+*.egg-info/
+# Installer logs
+pip-log.txt
+pip-delete-this-directory.txt
+
+# --- Celery ---
+# Celery beat schedule file
+celerybeat-schedule
+
+# --- OS-specific ---
+# macOS
+.DS_Store
+# Windows
+Thumbs.db
+ntuser.dat*

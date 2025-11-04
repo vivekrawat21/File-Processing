@@ -5,6 +5,12 @@ from sqlalchemy import pool
 
 from alembic import context
 
+# --- START: Your Custom Changes ---
+# Use absolute imports from 'app' because of 'prepend_sys_path = .' in alembic.ini
+from app.core.config import settings
+from app.db.models import Base
+# --- END: Your Custom Changes ---
+
 # this is the Alembic Config object, which provides
 # access to the values within the .ini file in use.
 config = context.config
@@ -14,11 +20,15 @@ config = context.config
 if config.config_file_name is not None:
     fileConfig(config.config_file_name)
 
+# Set the sqlalchemy.url in the config object dynamically from your settings
+sync_database_url = settings.DATABASE_URL.replace("asyncpg", "psycopg2")
+config.set_main_option("sqlalchemy.url", sync_database_url)
+
 # add your model's MetaData object here
 # for 'autogenerate' support
 # from myapp import mymodel
 # target_metadata = mymodel.Base.metadata
-target_metadata = None
+target_metadata = Base.metadata
 
 # other values from the config, defined by the needs of env.py,
 # can be acquired:
