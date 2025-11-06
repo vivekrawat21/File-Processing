@@ -11,7 +11,8 @@ class Settings(BaseSettings):
     REDIS_URL: str
 
     DEBUG: bool = False
-    APP_NAME: str = "File Processing API"
+    PROJECT_NAME: str = "File Processing API"
+    
 
     @property
     def DATABASE_URL(self) -> str:
