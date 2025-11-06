@@ -39,6 +39,7 @@ class Job(Base):
     failed_items = Column(Integer, nullable=False, default=0)
     invalid_items = Column(Integer, nullable=False, default=0)
     status = Column(Enum(JobStatus), default=JobStatus.queued, nullable=False)
+    eta_seconds = Column(Integer, nullable=True)
     error = Column(Text, nullable=True)
     created_at = Column(DateTime, nullable=False, server_default="now()")
     started_at = Column(DateTime, nullable=True)
